@@ -6,6 +6,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --bg-header: #3f3f3f;
+    --bg-arrow: rgba(255, 255, 255, 0.938);
+    --bg-main: #2a2a2a;
+    --blue: #0077b5;
+    --black: #000;
+}
 html {
     height: 100%;
     width: 100%;
@@ -22,7 +29,7 @@ body {
         "footer footer footer";
 }
 header {
-    background-color: #3f3f3f;
+    background-color: var(--bg-header);
     grid-area: header;
     display: flex;
     flex-direction: row;
@@ -32,12 +39,12 @@ header {
     height: 135px;
 }
 main {
-    background-color: #2a2a2a;
+    background-color: var(--bg-main);
     grid-area: main;
     color: #fff;
 }
 footer {
-    background-color: #3f3f3f;
+    background-color: var(--bg-header);
     grid-area: footer;
     display: flex;
     flex-direction: row;
@@ -70,7 +77,7 @@ header p {
     transition: all 1s ease;
 }
 .header-logo:hover {
-    scale: 1.1;
+    transform: scale(1.1);
     color: #0077b5;
     /* Må lage svg for color change */
 }
@@ -79,7 +86,7 @@ header p {
     width: 100px;
     display: block;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.938);
+    background-color: var(--bg-arrow);
 }
 .left {
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
@@ -90,15 +97,16 @@ header p {
 
 /* Index main */
 .about-container {
-    margin: 20px auto;
 }
 
 .card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto;
+    margin: 20px auto;
 }
-.about-image {
+.about-img {
+    margin: auto;
     width: auto;
     height: 300px;
 }
@@ -111,7 +119,50 @@ header p {
     text-align: center;
 }
 .about-text {
+    background-color: var(--bg-arrow);
+    color: #000;
+}
+.about-hl h1 {
+    font-size: 1.8rem;
+}
+.about-hl h2 {
+    font-size: 1.2rem;
+}
+.about-text p {
     margin: 10px 10px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* button */
+button {
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+}
+
+.portfolio {
+    width: 100px;
+    height: 40px;
+    background-color: #000;
+}
+.btn {
+    border-color: var(--blue);
+    color: #fff;
+    box-shadow: 0 0 40px 40px var(--black) inset, 0 0 0 0 var(--bg-arrow);
+    transition: all 400ms ease-in-out;
+}
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 0 10px 0 var(--bg-arrow) inset, 0 0 10px 4px var(--bg-arrow);
 }
 
 /* footer */
@@ -123,11 +174,11 @@ header p {
 }
 .fa-brands {
     color: #fff;
-    margin: 0 7.2px;
+    margin: 0 11.5px;
     transition: all 1s ease;
 }
 .fa-brands:hover {
-    scale: 1.2;
+    transform: scale(1.2);
     color: #0077b5;
 }
 .fa-linkedin-in {
@@ -142,3 +193,5 @@ header p {
         background-color: #3f3f3f;
     } */
 }
+
+/* test */
