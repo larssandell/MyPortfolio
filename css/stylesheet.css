@@ -15,12 +15,11 @@
 }
 html {
     height: 100%;
-    width: 100%;
     font-family: "Roboto", sans-serif;
 }
 body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     grid-template-areas:
@@ -96,16 +95,18 @@ header p {
 }
 
 /* Index main */
-.about-container {
-}
-
 .card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: auto;
     grid-template-rows: auto;
+    grid-template-areas:
+        "img"
+        "hl"
+        "text";
     margin: 20px auto;
 }
 .about-img {
+    grid-area: img;
     margin: auto;
     width: auto;
     height: 300px;
@@ -116,11 +117,14 @@ header p {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 .about-hl {
+    grid-area: hl;
     text-align: center;
 }
 .about-text {
     background-color: var(--bg-arrow);
     color: #000;
+    margin: 10px;
+    grid-area: text;
 }
 .about-hl h1 {
     font-size: 1.8rem;
@@ -134,9 +138,50 @@ header p {
     font-weight: 300;
 }
 .link-container {
+    margin-bottom: 10px;
+    z-index: 200;
+}
+.protfolio-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+main img:hover {
+    opacity: 0.8;
+}
+.look {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.fa-angle-down:nth-child(1) {
+    margin-bottom: -30px;
+}
+.fa-angle-down {
+    color: var(--bg-arrow);
+    font-size: 3rem;
+}
+.bounce {
+    animation: bounce 3s infinite;
+}
+.interests {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+}
+.my-interests {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.my-interests span {
+    border: 1px solid #fff;
+    padding: 5px 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px 0 var(--bg-arrow) inset, 0 0 2px 1px var(--bg-arrow);
 }
 /* button */
 button {
@@ -188,10 +233,113 @@ button {
 .fa-facebook-f {
     font-size: 35px;
 }
+
+/* keyframes */
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+/* media Q */
 @media only screen and (max-width: 360px) {
     /* .circle {
         background-color: #3f3f3f;
     } */
 }
-
-/* test */
+@media only screen and (min-width: 600px) {
+    .about-hl h1 {
+        font-size: 1.9rem;
+    }
+    .about-hl {
+        align-self: center;
+    }
+    .about-hl h2 {
+        font-size: 1.5rem;
+    }
+    .about-text p {
+        margin: 10px 10px;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+    .card {
+        grid-template-areas:
+            "img hl"
+            "img hl"
+            "text text";
+        margin: 20px 10%;
+    }
+    .interests {
+        margin: 40px 10%;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    .about-hl h1 {
+        font-size: 1.9rem;
+    }
+    .about-hl {
+        align-self: center;
+    }
+    .about-hl h2 {
+        font-size: 1.5rem;
+    }
+    .about-text p {
+        margin: 10px 15px;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+    .card {
+        grid-template-areas:
+            "img hl"
+            "img hl"
+            "text text";
+        margin: 20px 20%;
+    }
+    .interests {
+        margin: 40px 20%;
+    }
+    .portfolio {
+        width: 140px;
+        height: 60px;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .about-hl h1 {
+        font-size: 2rem;
+    }
+    .about-hl {
+        align-self: center;
+    }
+    .about-hl h2 {
+        font-size: 1.7rem;
+    }
+    .about-text p {
+        margin: 10px 20px;
+        font-size: 1.5rem;
+    }
+    .card {
+        margin: 20px 30%;
+    }
+    .portfolio {
+        width: 150px;
+        height: 70px;
+    }
+}
