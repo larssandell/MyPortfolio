@@ -32,7 +32,7 @@ This is my Portfolio page, to show what i have made. Im currently studing to bec
 
 <p>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,github,ai,ps,netlify,vscode,figma" />
+    <img src="https://skillicons.dev/icons?i=html,css,github,ai,ps,netlify,vscode" />
   </a>
 </p>
 
