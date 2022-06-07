@@ -1,6 +1,6 @@
 # GameHub
 
-![image](https://github.com/larssandell/gamehub/blob/main/gamehub.png)
+![image](https://github.com/larssandell/MyPortfolio/blob/main/MyPortfolio.png)
 
 ## Description
 
