@@ -32,7 +32,7 @@ It manly consist of HTML, CSS and for now very little JavaScript.
 
 <p>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,github,ai,ps,netlify,vscode,figma" />
+    <img src="https://skillicons.dev/icons?i=html,css,js,github,ai,ps,netlify,vscode,figma" />
   </a>
 </p>
 
