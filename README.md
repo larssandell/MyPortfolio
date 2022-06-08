@@ -46,3 +46,4 @@ It manly consist of HTML, CSS and for now very little JavaScript.
 <a href="https://www.linkedin.com/in/lars-sandell"><img height="50" src="https://github.com/larssandell/LarsSandell/blob/main/LinkedIN.png?raw=true"></a>
 <a href="https://www.facebook.com/BingoPingo"><img height="50" src="https://github.com/larssandell/LarsSandell/blob/main/Facebook.png?raw=true"></a>
 </div>
+
