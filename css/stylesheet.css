@@ -173,7 +173,8 @@ main img:hover {
     text-align: center;
 }
 .my-interests {
-    user-select: none;
+    /* user-select: none; */
+    cursor: pointer;
     margin: 20px 0;
     display: flex;
     flex-direction: row;
