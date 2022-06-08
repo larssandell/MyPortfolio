@@ -4,8 +4,8 @@
 
 ## Description
 
-This is my portfolio page this is an ongoing project that i will update and change along side of school.
-It manly consist of HTML, CSS and for now very little JavaScript.
+This is my portfolio page this is an ongoing project that I will update and change alongside of school. 
+It manly consists of HTML, CSS and for now very little JavaScript. 
 
 
 ### Pages that it includes:
