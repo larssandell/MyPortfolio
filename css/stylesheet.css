@@ -26,6 +26,7 @@ body {
         "header header header"
         "main main main"
         "footer footer footer";
+    animation: fadein ease-in 2s;
 }
 header {
     background-color: var(--bg-header);
@@ -75,10 +76,12 @@ header p {
     height: auto;
     transition: all 1s ease;
 }
+.circle-center img {
+    fill: white;
+    color: #fff;
+}
 .header-logo:hover {
     transform: scale(1.1);
-    color: #0077b5;
-    /* Må lage svg for color change */
 }
 .arrow {
     height: 135px;
@@ -170,6 +173,7 @@ main img:hover {
     text-align: center;
 }
 .my-interests {
+    user-select: none;
     margin: 20px 0;
     display: flex;
     flex-direction: row;
@@ -234,31 +238,54 @@ button {
     font-size: 35px;
 }
 
+/* loader intro */
+.loader {
+    width: 100vw;
+    height: 100vh;
+    background-color: #3f3f3f;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rotate {
+    position: relative;
+    animation: rotate 5s infinite linear;
+}
+.rotate::before,
+.rotate::after {
+    content: "";
+    position: absolute;
+}
+.loader-img {
+    width: 200px;
+    height: auto;
+}
+
 /* keyframes */
-@keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        -moz-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-        -webkit-transform: translateY(-30px);
-        transform: translateY(-30px);
-    }
-    60% {
-        -moz-transform: translateY(-15px);
-        -ms-transform: translateY(-15px);
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
     }
 }
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* media Q */
 @media only screen and (max-width: 360px) {
     /* .circle {
@@ -281,10 +308,6 @@ button {
         font-weight: 300;
     }
     .card {
-        grid-template-areas:
-            "img hl"
-            "img hl"
-            "text text";
         margin: 20px 10%;
     }
     .interests {
@@ -311,7 +334,7 @@ button {
             "img hl"
             "img hl"
             "text text";
-        margin: 20px 20%;
+        margin: 20px 15%;
     }
     .interests {
         margin: 40px 20%;
@@ -319,6 +342,7 @@ button {
     .portfolio {
         width: 140px;
         height: 60px;
+        font-size: 1rem;
     }
 }
 @media only screen and (min-width: 1600px) {
